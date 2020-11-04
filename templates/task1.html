@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MyProjects | Task 1</title> 
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+  <body>
+        <div class="header">
+            <div class="inner-header">
+                <div class="logo"><a href="{{ url_for('index') }}">MyProjects</a>
+                </div>
+           </div>
+        </div>
+        <div class="content">
+            <div class="banner-image">
+                <center>
+                <div class="inner-banner-image">
+                    <div class="banner_content">
+                        <h1>Predict Salary Analysis</h1>
+                        <h4><a href="#">Anaji Kadam</a></h4>
+                    </div>
+                </div>
+                </center>
+            </div>
+        </div>
+            <center>
+              <h1>Predict Salary Analysis</h1>
+              <form action="{{ url_for('predict1')}}"method="post">
+              <input type="text" name="experience" placeholder="Experience" required="required" /><br>
+              <input type="text" name="test_score" placeholder="Test Score" required="required" /><br>
+              <input type="text" name="interview_score" placeholder="Interview Score" required="required" /><br>
+              <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+              </form>
+             <br><br>
+               {{ prediction_text }}
+              <br><br>
+            </center>
+            <center>
+                <a href="{{ url_for('index') }}" class="button">Home</a>
+            </center>
+            <br><br>
+        <footer>
+            <div class="container">
+                <center>
+                    <p> Copyright © MyProjects. All Rights Reserved | Contact Me: anajikadam17@gmail.com | +91 00000 00000</p>
+                </center> 
+            </div>
+        </footer>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MyProjects | Task 2</title> 
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+  <body>
+        <div class="header">
+            <div class="inner-header">
+                <div class="logo"><a href="{{ url_for('index') }}">MyProjects</a>
+                </div>
+           </div>
+        </div>
+        <div class="content">
+            <div class="banner-image">
+                <center>
+                <div class="inner-banner-image">
+                    <div class="banner_content">
+                        <h1>Spam Detector For Email Messages</h1>
+                        <h4><a href="#">Anaji Kadam</a></h4>
+                    </div>
+                </div>
+                </center>
+            </div>
+        </div>
+            <center>
+              <h1>Spam Detector For Email Messages</h1>
+              <form action="{{ url_for('predict2')}}" method="POST">
+                <p>Enter Your Message Here</p>
+                <!-- <input type="text" name="comment"/> -->
+                <textarea name="message" rows="6" cols="50"></textarea>
+                <br>
+                <input type="submit" class="btn-info" value="predict">
+                </form>
+             <br><br>
+             <p style="color:blue;font-size:20;text-align: center;"><b>Results for Your Messages</b></p>
+             {% if prediction == 1%}
+             <h2 style="color:red;">Spam</h2>
+             {% elif prediction == 0%}
+             <h2 style="color:blue;">Not a Spam (Ham)</h2>
+             {% endif %}
+              <br><br>
+            </center>
+            <center>
+                <a href="{{ url_for('index') }}" class="button">Home</a>
+            </center>
+            <br><br>
+        <footer>
+            <div class="container">
+                <center>
+                    <p> Copyright © MyProjects. All Rights Reserved | Contact Me: anajikadam17@gmail.com | +91 00000 00000</p>
+                </center> 
+            </div>
+        </footer>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+model_data1:
+  train_data: data/train/hiring.csv
+model_data2:
+  train_data: data/train/spam.csv
+model_data3_1:
+  train_data: data/train/Data_Train.xlsx
+model_data3_2:
+  test_data: data/test/Test_set.xlsx
+
+
+model_pkl_1:
+  model_path: cache/pred_sal_model.pkl
+model_pkl_2_1:
+  model_path: cache/countvect.pkl
+model_pkl_2_2:
+  model_path: cache/NB_spam_model.pkl   
+model_pkl_3:
+  model_path: cache/flight_price_model.pkl
