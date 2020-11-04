@@ -20,22 +20,7 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route("/task1")
-def task1():
-    return render_template("task1.html")
 
-@app.route('/predict1',methods=['POST'])
-def predict1():
-    int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
-    PredictSalaryObj = PredictSalary()
-    my_prediction = PredictSalaryObj.predictsal(final_features)
-    output = round(my_prediction[0], 2)
-    return render_template('task1.html', 
-                           prediction_text='Employee Salary should be $ {}'
-                           .format(output))
-
-@app.route("/index")
 def index():
     return render_template("index.html")
 
